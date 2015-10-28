@@ -17,7 +17,7 @@ class RestService {
   def check(String url) {
     def rest = new RestBuilder()
     try {
-      def status = rest.get(url, requestCustomizer).status
+      def status = rest.get("${url}/", requestCustomizer).status
       log.info "HTTP status: $status"
       return status == 200
     } catch (e) {
